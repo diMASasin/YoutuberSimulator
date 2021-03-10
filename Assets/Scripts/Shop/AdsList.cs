@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class AdsList : MonoBehaviour
 {
     [SerializeField] private List<Ad> _ads;
     [SerializeField] private Player _player;
@@ -14,7 +14,7 @@ public class Shop : MonoBehaviour
         for (int i = 0; i < _ads.Count; i++)
         {
             AddItem(_ads[i]);
-        }    
+        }
     }
 
     private void AddItem(Ad ad)
@@ -40,7 +40,6 @@ public class Shop : MonoBehaviour
         if (_player.CheckSolvency(ad.Price))
         {
             _player.BuyAd(ad);
-
         }
     }
 }

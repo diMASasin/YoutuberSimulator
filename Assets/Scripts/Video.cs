@@ -12,14 +12,17 @@ public class Video : MonoBehaviour
     public Sprite Icon { get; private set; }
     public int MakeVideoDuration { get; private set; } = 6;
 
-
+    private int _videoQuality = 100;
 
     public void Initialize(Player player, TMP_InputField videoName)
     {
         Name = videoName.text;
         videoName.text = "";
 
-        Views = Random.Range(1, 30) + player.ViewsBonus + player.Subscribers;
+        InitializeVideoQuality(player);
+
+        Views = Random.Range(5, 30) + player.ViewsBonus + player.Subscribers;
+        Views *= _videoQuality / 100;
         player.ResetBonus();
 
         if (Views / 100 == 0)
@@ -39,5 +42,14 @@ public class Video : MonoBehaviour
         }
 
         Income = Views / 1000;
+    }
+
+    private void InitializeVideoQuality(Player player)
+    {
+        foreach (var item in player.ItemsList)
+            _videoQuality += item.CalculateSumOfValues();
+
+        foreach (var skill in player.Skills)
+            _videoQuality += skill.Value;
     }
 }

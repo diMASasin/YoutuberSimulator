@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skills : MonoBehaviour
+public class SkillsList : MonoBehaviour
 {
     [SerializeField] private List<Skill> _skills;
     [SerializeField] private Player _player;
     [SerializeField] private SkillItem _template;
     [SerializeField] private Transform _itemContainer;
+
+    public List<Skill> Skills => _skills;
 
     private void Start()
     {

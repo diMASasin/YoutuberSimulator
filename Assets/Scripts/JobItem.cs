@@ -42,7 +42,7 @@ public class JobItem : MonoBehaviour
     {
         _label.text = job.Label;
         _salary.text = job.Salary.ToString();
-        _workTime.text = job.WorkTime.Hours.ToString() + "h " + job.WorkTime.Minutes.ToString() + "m";
+        _workTime.text = job.WorkTime.ToString() + "h";
         _icon.sprite = job.Icon;
     }
 }

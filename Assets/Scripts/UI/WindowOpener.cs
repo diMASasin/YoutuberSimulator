@@ -5,29 +5,39 @@ using UnityEngine.UI;
 
 public class WindowOpener : MonoBehaviour
 {
-    [SerializeField] private GameObject _windowToOpen;
+    [SerializeField] private List<GameObject> _windowsToOpen;
     [SerializeField] private Button _openButton;
     [SerializeField] private Button _closeButton;
 
     private void OnEnable()
     {
-        _openButton.onClick.AddListener(OpenWindow);
-        _closeButton.onClick.AddListener(CloseWindow);
+        if(_openButton != null)
+            _openButton.onClick.AddListener(OpenWindow);
+        if (_closeButton != null)
+            _closeButton.onClick.AddListener(CloseWindow);
     }
 
     private void OnDisable()
     {
-        _openButton.onClick.RemoveListener(OpenWindow);
-        _closeButton.onClick.RemoveListener(CloseWindow);
+        if (_openButton != null)
+            _openButton.onClick.RemoveListener(OpenWindow);
+        if (_closeButton != null)
+            _closeButton.onClick.RemoveListener(CloseWindow);
     }
 
     public void OpenWindow()
     {
-        _windowToOpen.gameObject.SetActive(true);
+        foreach (var window in _windowsToOpen)
+        {
+           window.SetActive(true);
+        }
     }
 
     public void CloseWindow()
     {
-        _windowToOpen.gameObject.SetActive(false);
+        foreach (var window in _windowsToOpen)
+        {
+            window.SetActive(false);
+        }
     }
 }

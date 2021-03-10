@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebd0662e9fdd0b4a9817a81a7d03b4c, type: 3}
-  m_Name: Job 1
+  m_Script: {fileID: 11500000, guid: 91bb63a654ac1ee499f5e443ffd2a9ec, type: 3}
+  m_Name: Ad 2
   m_EditorClassIdentifier: 
-  _label: job 1
-  _salary: 100
-  _workHours: 8
+  _label: Ad 2
+  _price: 500
   _icon: {fileID: 0}
+  _views: 10000
+  _randomizationValue: 0.1

@@ -10,13 +10,15 @@ public class Player : MonoBehaviour
     [SerializeField] private int _subscribers;
     [SerializeField] private Time _time;
     [SerializeField] private int _sleepTime = 22;
-    //[SerializeField] private int _sleepDuration = 8;
-
+    [SerializeField] private SkillsList _skills;
+    [SerializeField] private List<ItemsList> _itemsList;
 
     private Job _job;
 
-    public int ViewsBonus { get; private set; }
     public int Subscribers => _subscribers;
+    public List<Skill> Skills => _skills.Skills;
+    public List<ItemsList> ItemsList => _itemsList;
+    public int ViewsBonus { get; private set; }
 
     public event UnityAction<int> MoneyChanged;
     public event UnityAction<int> SubscribersChanged;
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
 
     public bool IsEnoughTime(int duration)
     {
-        return _time.Hours + duration > _sleepTime ? false : true;
+        return _time.Hours + duration > _sleepTime;
     }
 
     public void MakeVideo(int subscriptions, int income, int makeVideoDuration)
@@ -46,21 +48,28 @@ public class Player : MonoBehaviour
         TimeChanged?.Invoke(_time);
 
     }
-    public void BuyAd(Ad ad)
+
+    public void BuyEquipment(int price)
     {
-        _money -= ad.Price;
-        ViewsBonus += ad.Views;
+        _money -= price;
         MoneyChanged?.Invoke(_money);
     }
 
-    public bool CheckSolvency(int price)
+    public void BuyAd(Ad ad)
     {
-        return _money >= price;
+        ViewsBonus += ad.Views;
+        _money -= ad.Price;
+        MoneyChanged?.Invoke(_money);
     }
 
     public void ResetBonus()
     {
         ViewsBonus = 0;
+    }
+
+    public bool CheckSolvency(int price)
+    {
+        return _money >= price;
     }
 
     public void Sleep()
@@ -77,13 +86,21 @@ public class Player : MonoBehaviour
         _job = job;
     }
 
+    public void GetContract(Contract contract)
+    {
+        _time.Hours += contract.WorkTime;
+        TimeChanged?.Invoke(_time);
+
+        _money -= contract.Price;
+        MoneyChanged?.Invoke(_money);
+    }
+
     private void Work()
     {
         if (_job == null)
             return;
 
-        _time.Hours += _job.WorkTime.Hours;
-        _time.Minutes += _job.WorkTime.Minutes;
+        _time.Hours += _job.WorkTime;
         TimeChanged?.Invoke(_time);
 
         _money += _job.Salary;

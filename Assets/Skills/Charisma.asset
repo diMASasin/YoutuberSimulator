@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e90517fc80712419ab2315a3c2ad65, type: 3}
-  m_Name: Ad 2
+  m_Script: {fileID: 11500000, guid: 820df695e7e39bd4187432c1ebc34b9d, type: 3}
+  m_Name: Charisma
   m_EditorClassIdentifier: 
-  _label: Ad 1
-  _price: 100
+  _maxValue: 100
+  _value: 0
+  _label: Charisma
   _icon: {fileID: 0}
-  _views: 1000
-  _randomizationValue: 0.1
+  _improveSkillDuration: 1

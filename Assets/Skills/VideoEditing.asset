@@ -16,4 +16,4 @@ MonoBehaviour:
   _value: 0
   _label: VideoEditing
   _icon: {fileID: 0}
-  _improveDuration: 1
+  _improveSkillDuration: 1

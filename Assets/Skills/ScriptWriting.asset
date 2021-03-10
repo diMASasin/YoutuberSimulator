@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScriptWriting
   m_EditorClassIdentifier: 
   _maxValue: 100
-  _value: 7
+  _value: 0
   _label: Script writing
   _icon: {fileID: 0}
-  _improveDuration: 1
+  _improveSkillDuration: 1

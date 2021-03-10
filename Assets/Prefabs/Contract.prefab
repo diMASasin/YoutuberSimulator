@@ -261,9 +261,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7725378229790573913}
-  - component: {fileID: 4387619875471251497}
+  - component: {fileID: -1673971320627130846}
   m_Layer: 5
-  m_Name: Ad
+  m_Name: Contract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ RectTransform:
   m_AnchoredPosition: {x: 553.1, y: -500.1}
   m_SizeDelta: {x: 781.8179, y: 203.72302}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4387619875471251497
+--- !u!114 &-1673971320627130846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,14 +302,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4701298758952059370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f565182ba656404fb645765972c5b73, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a2d95d34f29fa0428512d1f4ba10e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 1970742437192472440}
   _label: {fileID: 5893674809865502063}
   _price: {fileID: 327546510859308972}
-  _buyButton: {fileID: 3857201536732294519}
-  _views: {fileID: 7232572990766072612}
+  _workTime: {fileID: 7232572990766072612}
+  _icon: {fileID: 1970742437192472440}
+  _getContract: {fileID: 3857201536732294519}
 --- !u!1 &5129057305496157907
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 1146001981759603570}
   - component: {fileID: 7232572990766072612}
   m_Layer: 5
-  m_Name: Views
+  m_Name: WorkTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 169.44, y: 0}
-  m_SizeDelta: {x: 398.49017, y: 50}
+  m_AnchoredPosition: {x: 167.57, y: 0}
+  m_SizeDelta: {x: 232.05554, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1146001981759603570
 CanvasRenderer:
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +1000 views
+  m_text: 8h
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
