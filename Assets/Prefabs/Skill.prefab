@@ -392,11 +392,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca8e7677763a7b4989c01bb55214db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 8433115268576488367}
-  _label: {fileID: 4583398241394672056}
-  _value: {fileID: 3756848029545788107}
+  _improveSkillDuration: 1
+  _value: 0
+  _maxValue: 100
+  _valueText: {fileID: 0}
   _improveSkillButton: {fileID: 6617619868186136992}
   _progressBar: {fileID: 4036984620813168094}
+  _player: {fileID: 0}
 --- !u!1 &4036984620813168080
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

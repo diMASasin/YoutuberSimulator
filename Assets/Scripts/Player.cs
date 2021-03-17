@@ -10,19 +10,21 @@ public class Player : MonoBehaviour
     [SerializeField] private int _subscribers;
     [SerializeField] private Time _time;
     [SerializeField] private int _sleepTime = 22;
-    [SerializeField] private SkillsList _skills;
-    [SerializeField] private List<ItemsList> _itemsList;
-
-    private Job _job;
+    [SerializeField] private int _sleepDuration = 8;
+    [SerializeField] private List<EquipmentsShop> _itemsList;
+    [SerializeField] private Skills _skills;
 
     public int Subscribers => _subscribers;
-    public List<Skill> Skills => _skills.Skills;
-    public List<ItemsList> ItemsList => _itemsList;
+    public List<EquipmentsShop> ItemsList => _itemsList;
+    public Skills Skills => _skills;
+
     public int ViewsBonus { get; private set; }
 
     public event UnityAction<int> MoneyChanged;
     public event UnityAction<int> SubscribersChanged;
     public event UnityAction<Time> TimeChanged;
+
+    private Job _job;
 
     private void Start()
     {
@@ -33,7 +35,7 @@ public class Player : MonoBehaviour
 
     public bool IsEnoughTime(int duration)
     {
-        return _time.Hours + duration > _sleepTime;
+        return _time.Hours + duration <= _sleepTime;
     }
 
     public void MakeVideo(int subscriptions, int income, int makeVideoDuration)
@@ -57,7 +59,7 @@ public class Player : MonoBehaviour
 
     public void BuyAd(Ad ad)
     {
-        ViewsBonus += ad.Views;
+        ViewsBonus += ad.RandomizatedViews;
         _money -= ad.Price;
         MoneyChanged?.Invoke(_money);
     }
@@ -74,8 +76,7 @@ public class Player : MonoBehaviour
 
     public void Sleep()
     {
-        _time.Hours = 6;
-        _time.Days++;
+        _time.Hours += _sleepTime - _time.Hours + _sleepDuration;
         TimeChanged?.Invoke(_time);
 
         Work();
@@ -91,7 +92,7 @@ public class Player : MonoBehaviour
         _time.Hours += contract.WorkTime;
         TimeChanged?.Invoke(_time);
 
-        _money -= contract.Price;
+        _money += contract.Price;
         MoneyChanged?.Invoke(_money);
     }
 
@@ -107,7 +108,7 @@ public class Player : MonoBehaviour
         MoneyChanged?.Invoke(_money);
     }
 
-    public void SpendTime(int time)
+    public void ImproveSkill(int time)
     {
         _time.Hours += time;
         TimeChanged?.Invoke(_time);

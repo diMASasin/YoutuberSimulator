@@ -183,7 +183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7725378229790573913}
-  - component: {fileID: 1636596342232671087}
+  - component: {fileID: 926205990048787025}
   m_Layer: 5
   m_Name: Equipment
   m_TagString: Untagged
@@ -293,7 +293,7 @@ RectTransform:
   m_AnchoredPosition: {x: 553.1, y: -500.1}
   m_SizeDelta: {x: 781.8179, y: 203.72302}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1636596342232671087
+--- !u!114 &926205990048787025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,14 +302,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4701298758952059370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07e6bb20ba778b47bee03e274e807e2, type: 3}
+  m_Script: {fileID: 11500000, guid: f0b491a7f268fed4a84bd620c81ed1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 1970742437192472440}
   _label: {fileID: 5893674809865502063}
   _description: {fileID: 7232572990766072612}
   _price: {fileID: 327546510859308972}
-  _improveSkillButton: {fileID: 3857201536732294519}
+  _buyButton: {fileID: 3857201536732294519}
 --- !u!1 &5129057305496157907
 GameObject:
   m_ObjectHideFlags: 0

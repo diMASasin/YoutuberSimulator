@@ -5,6 +5,8 @@ using TMPro;
 
 public class Video : MonoBehaviour
 {
+    [SerializeField]private Skills _skills;
+
     public string Name { get; private set; }
     public int Views { get; private set; }
     public int Income { get; private set; }
@@ -24,6 +26,8 @@ public class Video : MonoBehaviour
         Views = Random.Range(5, 30) + player.ViewsBonus + player.Subscribers;
         Views *= _videoQuality / 100;
         player.ResetBonus();
+
+        //MakeVideoDuration += _skills.VideoEditing.Value / 50;
 
         if (Views / 100 == 0)
         {
@@ -49,7 +53,6 @@ public class Video : MonoBehaviour
         foreach (var item in player.ItemsList)
             _videoQuality += item.CalculateSumOfValues();
 
-        foreach (var skill in player.Skills)
-            _videoQuality += skill.Value;
+        _videoQuality += player.Skills.CalculateSumOfSkillValues();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class JobList : MonoBehaviour
 {
     [SerializeField] private List<Job> _jobs;
-    [SerializeField] private JobItem _template;
+    [SerializeField] private JobView _template;
     [SerializeField] private Transform _container;
     [SerializeField] private Player _player;
 
@@ -13,24 +13,24 @@ public class JobList : MonoBehaviour
     {
         foreach (var job in _jobs)
         {
-            AddItem(job);
+            AddJob(job);
         }
     }
 
-    private void AddItem(Job job)
+    private void AddJob(Job job)
     {
-        JobItem jobItem = Instantiate(_template, _container);
-        InitializeItem(jobItem, job);
+        JobView jobItem = Instantiate(_template, _container);
+        InitializeJob(jobItem, job);
     }
 
-    private void InitializeItem(JobItem jobItem, Job job)
+    private void InitializeJob(JobView jobItem, Job job)
     {
         jobItem.SetJob(job);
         jobItem.GetJobButtonClick += OnGetJobButtonClick;
 
     }
 
-    private void OnGetJobButtonClick(Job job, JobItem jobItem)
+    private void OnGetJobButtonClick(Job job, JobView jobItem)
     {
         _player.GetJob(job);
     }

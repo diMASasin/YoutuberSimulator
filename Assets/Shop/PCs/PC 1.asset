@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e7bb499123ee14b9ab6225c7098cc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 17667047c77ecc1479526d34c7d644ab, type: 3}
   m_Name: PC 1
   m_EditorClassIdentifier: 
-  _label: PC 1
+  _label: pc 1
   _description: 
   _icon: {fileID: 0}
   _price: 100
-  _value: 10
+  _value: 1

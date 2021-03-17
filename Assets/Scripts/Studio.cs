@@ -8,7 +8,7 @@ public class Studio : MonoBehaviour
 {
     [SerializeField] private Button _makeVideoButton;
     [SerializeField] private Studio _studio;
-    [SerializeField] private VideoItem _videoItemTemplate;
+    [SerializeField] private VideoView _videoItemTemplate;
     [SerializeField] private Transform _container;
     [SerializeField] private TMP_InputField _videoName;
     [SerializeField] private Player _player;
@@ -27,7 +27,7 @@ public class Studio : MonoBehaviour
 
     private void MakeVideo()
     {
-        Video newVideo = gameObject.AddComponent<Video>();
+        Video newVideo = new Video();
 
         if (!_player.IsEnoughTime(newVideo.MakeVideoDuration))
             return;
@@ -37,8 +37,8 @@ public class Studio : MonoBehaviour
         _videoItemTemplate.SetVideo(newVideo);
         _videos.Add(newVideo);
 
-        VideoItem newVideoItem = Instantiate(_videoItemTemplate, _container);
-        newVideoItem.transform.SetAsFirstSibling();
+        VideoView newVideoView = Instantiate(_videoItemTemplate, _container);
+        newVideoView.transform.SetAsFirstSibling();
 
         _player.MakeVideo(newVideo.Subscriptions, newVideo.Income, newVideo.MakeVideoDuration);
     }

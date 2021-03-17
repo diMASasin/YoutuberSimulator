@@ -183,7 +183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -310,7 +310,6 @@ MonoBehaviour:
   _workTime: {fileID: 7232572990766072612}
   _icon: {fileID: 1970742437192472440}
   _getJob: {fileID: 3857201536732294519}
-  _player: {fileID: 0}
 --- !u!1 &5129057305496157907
 GameObject:
   m_ObjectHideFlags: 0
