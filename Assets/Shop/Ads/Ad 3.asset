@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ad 3
   m_EditorClassIdentifier: 
   _label: Ad 3
-  _price: 2500
-  _icon: {fileID: 0}
+  _price: 5000
+  _icon: {fileID: 21300000, guid: cd1757bc6ef0b12448baaccd94a906b3, type: 3}
   _views: 100000
   _randomizationValue: 0.1

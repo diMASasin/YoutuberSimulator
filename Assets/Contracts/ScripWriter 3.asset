@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: ScripWriter 3
   _price: 100
+  _randomizationValue: 0.1
   _workHours: 2
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 8cb80f62dc78b1d418b3029834d83986, type: 3}
   _requiredSkillValue: 50
   _requiredSkill: 0

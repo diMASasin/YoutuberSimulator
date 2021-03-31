@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: VideoEditor 4
   _price: 750
+  _randomizationValue: 0.1
   _workHours: 2
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 91ebf1d96640d1340b6143b99128e85d, type: 3}
   _requiredSkillValue: 190
   _requiredSkill: 1

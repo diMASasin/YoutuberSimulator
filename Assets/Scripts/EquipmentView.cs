@@ -12,6 +12,7 @@ public class EquipmentView : MonoBehaviour
     [SerializeField] private TMP_Text _description;
     [SerializeField] private TMP_Text _price;
     [SerializeField] private Button _buyButton;
+    [SerializeField] private Image _checkMark;
 
     private Equipment _equipment;
 
@@ -30,6 +31,10 @@ public class EquipmentView : MonoBehaviour
     private void OnBuyButtonClick()
     {
         BuyButtonClick?.Invoke(_equipment, this);
+    }
+
+    public void DisableButton()
+    {
         _buyButton.interactable = false;
     }
 
@@ -39,11 +44,21 @@ public class EquipmentView : MonoBehaviour
         RenderSkill(equipment);
     }
 
+    public void ShowCheckMark()
+    {
+        _checkMark.gameObject.SetActive(true);
+    }
+
+    public void HideCheckMark()
+    {
+        _checkMark.gameObject.SetActive(false);
+    }
+
     private void RenderSkill(Equipment equipment)
     {
         _icon.sprite = equipment.Icon;
         _label.text = equipment.Label;
-        _description.text = "+" + equipment.Value.ToString() + " " + equipment.Description;
-        _price.text = equipment.Price.ToString();
+        _description.text = "+" + equipment.Value.ToString() + " Video quality";
+        _price.text = "$" + equipment.Price.ToString();
     }
 }

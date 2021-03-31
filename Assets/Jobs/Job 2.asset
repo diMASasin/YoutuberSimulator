@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebd0662e9fdd0b4a9817a81a7d03b4c, type: 3}
   m_Name: Job 2
   m_EditorClassIdentifier: 
-  _label: job 1
-  _salary: 75
+  _label: Cleaner
+  _salary: 85
   _workHours: 6
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: f3cb95541869bab4eb6286b0fb462c46, type: 3}

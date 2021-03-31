@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17667047c77ecc1479526d34c7d644ab, type: 3}
   m_Name: Microphone 3
   m_EditorClassIdentifier: 
-  _label: micro 1
-  _description: 
-  _icon: {fileID: 0}
-  _price: 100
-  _value: 1
+  _label: Condenser microphone
+  _icon: {fileID: 21300000, guid: 2cf963b228e22464fa72545abcf8b01d, type: 3}
+  _price: 1350
+  _value: 16

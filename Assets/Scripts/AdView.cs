@@ -42,7 +42,7 @@ public class AdView : MonoBehaviour
     {
         _icon.sprite = ad.Icon;
         _label.text = ad.Label;
-        _price.text = ad.Price.ToString();
+        _price.text = "$" + ad.Price.ToString();
         _views.text = "+" + ad.Views.ToString() + " views";
     }
 }

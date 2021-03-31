@@ -53,8 +53,8 @@ public class ContractsList : MonoBehaviour
 
     private void InitializeContract(ContractView contractItem, Contract contract)
     {
-        contractItem.SetJob(contract);
-        contractItem.GetJobButtonClick += OnGetJobButtonClick;
+        contractItem.SetContract(contract);
+        contractItem.GetContractButtonClick += OnGetJobButtonClick;
 
     }
 
@@ -62,12 +62,13 @@ public class ContractsList : MonoBehaviour
     {
         SetRequiredSkill(contract, out Skill requiredSkill);
 
-        if (requiredSkill.Value < contract.RequiredSkillValue && !_player.IsEnoughTime(contract.WorkTime))
+        if (requiredSkill.Value < contract.RequiredSkillValue || !_player.IsEnoughTime(contract.WorkTime))
             return;
 
         _player.GetContract(contract);
+        _contractViews.Remove(contractView);
         Destroy(contractView.gameObject);
-        contractView.GetJobButtonClick -= OnGetJobButtonClick;
+        contractView.GetContractButtonClick -= OnGetJobButtonClick;
     }
 
     private void SetRequiredSkill(Contract contract, out Skill skill)
@@ -79,7 +80,7 @@ public class ContractsList : MonoBehaviour
         else if (contract.RequiredSkill == SkillsEnum.ScriptWriting)
             skill = _player.Skills.ScriptWriting;
         else if (contract.RequiredSkill == SkillsEnum.VideoEditing)
-            skill = _player.Skills.VideoRecording;
+            skill = _player.Skills.VideoEditing;
         else if (contract.RequiredSkill == SkillsEnum.VideoRecording)
             skill = _player.Skills.VideoRecording;
     }

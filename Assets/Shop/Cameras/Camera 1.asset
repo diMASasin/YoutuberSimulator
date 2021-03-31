@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17667047c77ecc1479526d34c7d644ab, type: 3}
   m_Name: Camera 1
   m_EditorClassIdentifier: 
-  _label: camera 1
-  _description: 
-  _icon: {fileID: 0}
+  _label: 480p web camera
+  _icon: {fileID: 21300000, guid: 81d3b2ace5172704e8964522e21626a6, type: 3}
   _price: 100
-  _value: 1
+  _value: 5

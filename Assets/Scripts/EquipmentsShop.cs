@@ -7,8 +7,9 @@ public class EquipmentsShop : MonoBehaviour
     [SerializeField] private List<Equipment> _equipments;
     [SerializeField] private EquipmentView _template;
     [SerializeField] private Transform _itemContainer;
+    [SerializeField] private Player _player;
 
-    [SerializeField] protected Player _player;
+    private List<EquipmentView> _equipmentViews = new List<EquipmentView>();
 
     public List<Equipment> Upgrades => _equipments;
 
@@ -23,6 +24,7 @@ public class EquipmentsShop : MonoBehaviour
     private void AddEquipment(Equipment equipment)
     {
         EquipmentView equipmentView = Instantiate(_template, _itemContainer);
+        _equipmentViews.Add(equipmentView);
         InitializeEquipment(equipmentView, equipment);
     }
 
@@ -34,15 +36,17 @@ public class EquipmentsShop : MonoBehaviour
 
     private void OnBuyButtonClick(Equipment equipment, EquipmentView equipmentView)
     {
-        TryBuyItem(equipment, equipmentView);
+        TryBuyEquipment(equipment, equipmentView);
     }
 
-    protected virtual void TryBuyItem(Equipment equipment, EquipmentView equipmentView) 
+    protected virtual void TryBuyEquipment(Equipment equipment, EquipmentView equipmentView) 
     {
         if (_player.CheckSolvency(equipment.Price))
         {
+            equipmentView.ShowCheckMark();
+            equipmentView.DisableButton();
             equipment.Sell();
-            _player.BuyEquipment(equipment.Price);
+            _player.Pay(equipment.Price);
         }
     }
 
@@ -50,9 +54,10 @@ public class EquipmentsShop : MonoBehaviour
     {
         int sumOfValues = 0;
 
-        foreach (var upgrade in _equipments)
+        foreach (var equipment in _equipments)
         {
-            sumOfValues += upgrade.Value;
+            if(equipment.WasBought)
+                sumOfValues += equipment.Value;
         }
 
         return sumOfValues;

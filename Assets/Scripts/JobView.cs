@@ -11,6 +11,7 @@ public class JobView : MonoBehaviour
     [SerializeField] private TMP_Text _salary;
     [SerializeField] private TMP_Text _workTime;
     [SerializeField] private Image _icon;
+    [SerializeField] private Image _checkMark;
     [SerializeField] private Button _getJob;
 
     private Job _job;
@@ -38,11 +39,21 @@ public class JobView : MonoBehaviour
         RenderJob(job);
     }
 
+    public void ShowCheckMark()
+    {
+        _checkMark.gameObject.SetActive(true);
+    }
+
+    public void HideCheckMark()
+    {
+        _checkMark.gameObject.SetActive(false);
+    }
+
     private void RenderJob(Job job)
     {
         _label.text = job.Label;
-        _salary.text = job.Salary.ToString();
-        _workTime.text = job.WorkTime.ToString() + "h";
+        _salary.text = job.Salary.ToString() + "$";
+        _workTime.text = job.WorkTime.ToString() + "h / day";
         _icon.sprite = job.Icon;
     }
 }

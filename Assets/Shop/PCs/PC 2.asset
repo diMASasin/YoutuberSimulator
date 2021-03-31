@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17667047c77ecc1479526d34c7d644ab, type: 3}
   m_Name: PC 2
   m_EditorClassIdentifier: 
-  _label: pc 1
-  _description: 
-  _icon: {fileID: 0}
-  _price: 100
-  _value: 1
+  _label: Laptop
+  _icon: {fileID: 21300000, guid: 33b077749b1984745b5b472551efa80b, type: 3}
+  _price: 1000
+  _value: 11

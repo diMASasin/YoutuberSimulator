@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: Ad 1
   _price: 100
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: cd1757bc6ef0b12448baaccd94a906b3, type: 3}
   _views: 1000
   _randomizationValue: 0.1

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: VideoOperator 1
   _price: 110
+  _randomizationValue: 0.1
   _workHours: 2
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: bb1bf96d5067d98418f5fceec0a32bb5, type: 3}
   _requiredSkillValue: 25
   _requiredSkill: 2

@@ -31,6 +31,7 @@ public class Skill : MonoBehaviour
     {
         _progressBar.maxValue = _maxValue;
         _progressBar.wholeNumbers = true;
+        _valueText.text = _progressBar.value.ToString() + " / " + _progressBar.maxValue.ToString();
     }
 
     private void OnImproveSkillButtonClick()

@@ -11,14 +11,18 @@ public class ShowCanvasGroup : MonoBehaviour
 
     private void OnEnable()
     {
-        _openButton.onClick.AddListener(Open);
+       if(_openButton != null)
+         _openButton.onClick.AddListener(Open);
+       if(_closeButton != null)
         _closeButton.onClick.AddListener(Close);
     }
 
     private void OnDisable()
     {
-        _openButton.onClick.RemoveListener(Open);
-        _openButton.onClick.RemoveListener(Close);
+        if(_openButton != null)
+            _openButton.onClick.RemoveListener(Open);
+        if(_closeButton != null)
+            _closeButton.onClick.RemoveListener(Close);
     }
 
     public void Open()

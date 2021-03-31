@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: Charisma 3
   _price: 120
+  _randomizationValue: 0.1
   _workHours: 2
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: b6f873715360d1b4e8f4a7ae6e511585, type: 3}
   _requiredSkillValue: 50
   _requiredSkill: 3

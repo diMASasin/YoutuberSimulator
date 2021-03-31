@@ -24,9 +24,9 @@ public class VideoView : MonoBehaviour
     public void RenderVideo(Video video)
     {
         _label.text = video.Name;
-        _subscriptions.text = video.Subscriptions.ToString() + " subs";
-        _views.text = video.Views.ToString() + " views";
-        _income.text = video.Income.ToString() + "$";
+        _subscriptions.text = video.Subscriptions.ToString();
+        _views.text = video.Views.ToString();
+        _income.text = video.Income.ToString();
         _icon.sprite = video.Icon;
     }
 }
