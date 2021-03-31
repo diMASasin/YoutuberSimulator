@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fa290c6b2a6eea4b818a080ffa34a4c, type: 3}
-  m_Name: ScripWriter 3
+  m_Name: ScriptWriter 4
   m_EditorClassIdentifier: 
-  _label: ScripWriter 3
-  _price: 100
+  _label: ScriptWriter 4
+  _price: 160
   _randomizationValue: 0.1
-  _workHours: 2
+  _workHours: 3
   _icon: {fileID: 21300000, guid: 8cb80f62dc78b1d418b3029834d83986, type: 3}
-  _requiredSkillValue: 50
+  _requiredSkillValue: 70
   _requiredSkill: 0
