@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class Time : MonoBehaviour
 {
-    public int Days { get; private set; } = 0;
-
     [SerializeField] private int _hours = 6;
     [SerializeField] private int _minutes = 0;
+
+    public int Days { get; private set; } = 0;
 
     public UnityAction DayIsOver;
 
