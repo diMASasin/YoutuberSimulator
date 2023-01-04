@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _sleepTime = 22;
     [SerializeField] private int _sleepDuration = 8;
     [SerializeField] private int _personalExpensesValue = 75;
-    [SerializeField] private Time _time;
+    [SerializeField] private GameTime _time;
     [SerializeField] private List<EquipmentsShop> _equipmentShops;
     [SerializeField] private Skills _skills;
 
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int> MoneyChanged;
     public event UnityAction<int> SubscribersChanged;
-    public event UnityAction<Time> TimeChanged;
+    public event UnityAction<GameTime> TimeChanged;
     public event UnityAction<string> NotEnoughTime;
 
     private Job _job;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     {
         SubscribersChanged?.Invoke(_subscribers);
         MoneyChanged?.Invoke(_money);
-        TimeChanged?.Invoke(_time);
+        _time.ChangeTime();
     }
 
     public bool IsEnoughTime(int duration)
@@ -58,10 +58,6 @@ public class Player : MonoBehaviour
 
         _subscribers += subscriptions;
         SubscribersChanged?.Invoke(_subscribers);
-
-        _time.Hours += makeVideoDuration;
-        TimeChanged?.Invoke(_time);
-
     }
 
     public void Pay(int price)

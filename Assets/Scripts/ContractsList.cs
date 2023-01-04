@@ -8,7 +8,7 @@ public class ContractsList : MonoBehaviour
     [SerializeField] private ContractView _template;
     [SerializeField] private Transform _container;
     [SerializeField] private Player _player;
-    [SerializeField] private Time _time;
+    [SerializeField] private GameTime _time;
 
     private List<ContractView> _contractViews = new List<ContractView>();
 

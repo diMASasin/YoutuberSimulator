@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName ="New Video", menuName ="Video", order = 56)]
 public class Video : ScriptableObject
@@ -24,7 +25,24 @@ public class Video : ScriptableObject
         videoName.text = "New video";
 
         InitializeVideoQuality(player);
+        InitializeViews(player);
 
+        Income = Views / 1000;
+        Income += Mathf.RoundToInt(Random.Range(-Income * _randomizationValue, Income * _randomizationValue));
+    }
+
+    private void InitializeVideoQuality(Player player)
+    {
+        _videoQuality = 100;
+
+        foreach (var equipmentShop in player.EquipmetShops)
+            _videoQuality += equipmentShop.CalculateSumOfValues();
+
+        _videoQuality += player.Skills.CalculateSumOfSkillValues();
+    }
+
+    private void InitializeViews(Player player)
+    {
         Views = Random.Range(5, 30) + player.Subscribers;
         Views = Mathf.RoundToInt(Views * (float)_videoQuality / 100);
         Views += player.ViewsBonus;
@@ -40,25 +58,11 @@ public class Video : ScriptableObject
                 Subscriptions = 1;
             else
                 Subscriptions = 0;
-
         }
         else
         {
             Subscriptions = Views / 100;
             Subscriptions += Mathf.RoundToInt(Random.Range(-Subscriptions * _randomizationValue, Subscriptions * _randomizationValue));
         }
-
-        Income = Views / 1000;
-        Income += Mathf.RoundToInt(Random.Range(-Income * _randomizationValue, Income * _randomizationValue));
-    }
-
-    private void InitializeVideoQuality(Player player)
-    {
-        _videoQuality = 100;
-
-        foreach (var equipmentShop in player.EquipmetShops)
-            _videoQuality += equipmentShop.CalculateSumOfValues();
-
-        _videoQuality += player.Skills.CalculateSumOfSkillValues();
     }
 }

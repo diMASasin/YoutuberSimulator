@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class Studio : MonoBehaviour
 {
     [SerializeField] private Button _makeVideoButton;
-    [SerializeField] private Studio _studio;
     [SerializeField] private VideoView _videoViewTemplate;
-    [SerializeField] private Transform _container;
     [SerializeField] private TMP_InputField _videoName;
     [SerializeField] private Player _player;
     [SerializeField] private Video _video;
+    [SerializeField] private VideoCreating _videoCreating;
+    
 
-    private void Start()
+    private void Awake()
     {
         _videoName.text = "New video";
     }
@@ -38,10 +38,8 @@ public class Studio : MonoBehaviour
 
         _videoViewTemplate.SetVideo(_video);
 
-        VideoView newVideoView = Instantiate(_videoViewTemplate, _container);
-        newVideoView.transform.SetAsFirstSibling();
-
-        _player.MakeVideo(_video.Subscriptions, _video.Income, _video.MakeVideoDuration);
+        _videoCreating.gameObject.SetActive(true);
+        _videoCreating.StartCreateVideo(_videoViewTemplate, _video);
     }
 }
 
